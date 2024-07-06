@@ -18,9 +18,6 @@ public class OrderServiceIMPL implements OrderService {
     @Autowired
     private OrderRepository orderRepository;
 
-//    @Autowired
-//    private KafkaConsumer kafkaConsumer;
-
     @Autowired
     private KafkaProducer kafkaProducer;
 
@@ -33,7 +30,6 @@ public class OrderServiceIMPL implements OrderService {
             e.printStackTrace();
         }
         log.info("Save information on Mongo with success");
-
     }
 
     @Override

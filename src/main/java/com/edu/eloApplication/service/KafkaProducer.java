@@ -23,5 +23,4 @@ public class KafkaProducer {
         log.info("send message to kafka");
         kafkaTemplate.send(topic, msg);
     }
-
 }

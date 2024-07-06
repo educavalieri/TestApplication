@@ -18,7 +18,12 @@ public class KafkaConsumer {
     @KafkaListener(topics = "topic_eloApplication_kafka", groupId = "group_id")
     public void receiveMessage(String msg){
       log.info("Receive message from Kafka");
-      orderRepository.save(new OrderEntity(msg, StatusEnum.ENVIADO_TRANSPORTADORA));
+      try {
+          orderRepository.save(new OrderEntity(msg, StatusEnum.ENVIADO_TRANSPORTADORA));
+      }catch (Exception e){
+          e.printStackTrace();
+      }
+      log.info("Order processed with success");
     }
 
 }
