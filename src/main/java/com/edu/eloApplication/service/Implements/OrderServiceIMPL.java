@@ -4,14 +4,12 @@ import com.edu.eloApplication.entity.OrderEntity;
 import com.edu.eloApplication.entity.dto.OrderDTO;
 import com.edu.eloApplication.enums.StatusEnum;
 import com.edu.eloApplication.repository.OrderRepository;
-//import com.edu.eloApplication.service.KafkaConsumer;
 import com.edu.eloApplication.service.KafkaProducer;
-import com.edu.eloApplication.service.OrderService;
+import com.edu.eloApplication.service.exceptions.ResourceNotFoundException;
+import com.edu.eloApplication.service.interfaces.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @Slf4j
@@ -35,13 +33,19 @@ public class OrderServiceIMPL implements OrderService {
             e.printStackTrace();
         }
         log.info("Save information on Mongo with success");
-//        kafkaProducer.sendMessage(productName);
+
     }
 
     @Override
     public OrderEntity consult(String id) {
-        Optional<OrderEntity> orderEntity = orderRepository.findById(id);
-        return orderEntity.get();
+        return orderRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("This id was not found"));
+    }
+
+    @Override
+    public void process(OrderDTO orderDTO) {
+        OrderEntity entity = consult(orderDTO.getId());
+        kafkaProducer.sendMessage(orderDTO.getId());
+
     }
 
 }

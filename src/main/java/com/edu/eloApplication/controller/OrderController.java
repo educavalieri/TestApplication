@@ -24,4 +24,10 @@ public class OrderController {
         orderServiceIMPL.create(orderDTO);
         return ResponseEntity.ok().build();
     }
+
+    @PostMapping(value = "/process")
+    public ResponseEntity process(@RequestBody OrderDTO orderDTO){
+        orderServiceIMPL.process(orderDTO);
+        return ResponseEntity.ok().build();
+    }
 }
