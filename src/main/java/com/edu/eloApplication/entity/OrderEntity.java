@@ -12,10 +12,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collation = "order_entity")
+@Document(collection = "order")
 public class OrderEntity {
 
     @Id
-    private String productName;
+    private String id;
     private StatusEnum status;
 }

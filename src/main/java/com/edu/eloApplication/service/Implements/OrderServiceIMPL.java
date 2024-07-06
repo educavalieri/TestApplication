@@ -1,6 +1,7 @@
 package com.edu.eloApplication.service.Implements;
 
 import com.edu.eloApplication.entity.OrderEntity;
+import com.edu.eloApplication.entity.dto.OrderDTO;
 import com.edu.eloApplication.enums.StatusEnum;
 import com.edu.eloApplication.repository.OrderRepository;
 //import com.edu.eloApplication.service.KafkaConsumer;
@@ -26,19 +27,21 @@ public class OrderServiceIMPL implements OrderService {
     private KafkaProducer kafkaProducer;
 
     @Override
-    public void create(String productName) {
+    public void create(OrderDTO orderDTO) {
+        OrderEntity orderEntity = new OrderEntity(orderDTO.getId(), StatusEnum.AGUARDANDO_ENVIO);
         try {
-            orderRepository.save(new OrderEntity(productName, StatusEnum.AGUARDANDO_ENVIO));
+            orderRepository.save(orderEntity);
         }catch (Exception e){
             e.printStackTrace();
         }
         log.info("Save information on Mongo with success");
-        kafkaProducer.sendMessage(productName);
+//        kafkaProducer.sendMessage(productName);
     }
 
     @Override
-    public OrderEntity consult(String productName) {
-        return orderRepository.findById(productName).get();
+    public OrderEntity consult(String id) {
+        Optional<OrderEntity> orderEntity = orderRepository.findById(id);
+        return orderEntity.get();
     }
 
 }
