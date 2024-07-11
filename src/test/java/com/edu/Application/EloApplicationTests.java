@@ -1,4 +1,4 @@
-package com.edu.eloApplication;
+package com.edu.Application;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

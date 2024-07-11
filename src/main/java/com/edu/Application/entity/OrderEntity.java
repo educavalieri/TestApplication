@@ -1,6 +1,6 @@
-package com.edu.eloApplication.entity;
+package com.edu.Application.entity;
 
-import com.edu.eloApplication.enums.StatusEnum;
+import com.edu.Application.enums.StatusEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,8 +1,8 @@
-package com.edu.eloApplication.controller;
+package com.edu.Application.controller;
 
-import com.edu.eloApplication.entity.OrderEntity;
-import com.edu.eloApplication.entity.dto.OrderDTO;
-import com.edu.eloApplication.service.Implements.OrderServiceIMPL;
+import com.edu.Application.entity.OrderEntity;
+import com.edu.Application.entity.dto.OrderDTO;
+import com.edu.Application.service.Implements.OrderServiceIMPL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

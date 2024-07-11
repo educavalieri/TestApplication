@@ -1,4 +1,4 @@
-package com.edu.eloApplication.service.exceptions;
+package com.edu.Application.service.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException{
 

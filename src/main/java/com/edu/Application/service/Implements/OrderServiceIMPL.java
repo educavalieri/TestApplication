@@ -1,12 +1,12 @@
-package com.edu.eloApplication.service.Implements;
+package com.edu.Application.service.Implements;
 
-import com.edu.eloApplication.entity.OrderEntity;
-import com.edu.eloApplication.entity.dto.OrderDTO;
-import com.edu.eloApplication.enums.StatusEnum;
-import com.edu.eloApplication.repository.OrderRepository;
-import com.edu.eloApplication.service.KafkaProducer;
-import com.edu.eloApplication.service.exceptions.ResourceNotFoundException;
-import com.edu.eloApplication.service.interfaces.OrderService;
+import com.edu.Application.entity.OrderEntity;
+import com.edu.Application.entity.dto.OrderDTO;
+import com.edu.Application.enums.StatusEnum;
+import com.edu.Application.repository.OrderRepository;
+import com.edu.Application.service.KafkaProducer;
+import com.edu.Application.service.exceptions.ResourceNotFoundException;
+import com.edu.Application.service.interfaces.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

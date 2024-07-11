@@ -1,4 +1,4 @@
-package com.edu.eloApplication.entity.dto;
+package com.edu.Application.entity.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

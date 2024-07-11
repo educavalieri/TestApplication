@@ -1,8 +1,8 @@
-package com.edu.eloApplication.service;
+package com.edu.Application.service;
 
-import com.edu.eloApplication.entity.OrderEntity;
-import com.edu.eloApplication.enums.StatusEnum;
-import com.edu.eloApplication.repository.OrderRepository;
+import com.edu.Application.entity.OrderEntity;
+import com.edu.Application.enums.StatusEnum;
+import com.edu.Application.repository.OrderRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;

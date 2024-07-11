@@ -1,6 +1,6 @@
-package com.edu.eloApplication.repository;
+package com.edu.Application.repository;
 
-import com.edu.eloApplication.entity.OrderEntity;
+import com.edu.Application.entity.OrderEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface OrderRepository extends MongoRepository<OrderEntity, String> {
